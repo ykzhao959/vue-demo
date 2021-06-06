@@ -1,3 +1,5 @@
+const { config } = require("npm")
+
 // 这里的webpack配置会和公共的webpack.config.js进行合并
 module.exports = {
     // 执行 npm run build 统一配置文件路径（本地访问dist/index.html需'./'）
@@ -12,6 +14,7 @@ module.exports = {
     // runtimeCompiler: false, // 是否使用带有浏览器内编译器的完整构建版本
     configureWebpack: { // 别名配置
         resolve: {
+            extensions: ['.js', '.json', '.vue'],
             alias: {
                 //'src': '@', 默认已配置
                 'assets': '@/assets',
